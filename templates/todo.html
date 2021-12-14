@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block body %}
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+      </div>
+      <h2 class="article-title">{{ todo.title }}</h2>
+      <p class="article-content">{{ todo.description }}</p>
+      
+
+    </div>
+    <div class="d-flex justify-content-around">
+      <a href="{{ url_for ('done_todo', id=todo.id) }}"><button class="btn btn-success" type="submit">Done</button></a>
+      <a href="{{ url_for ('edit_todo', id=todo.id) }}"><button class="btn btn-primary" type="submit">Update</button></a>
+      <a href="{{ url_for ('delete_todo', id=todo.id) }}"><button class="btn btn-danger" type="submit">Delete</button></a>
+    </div>
+  </article>
+  <!-- Modal -->
+
+{% endblock body %}

@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+
+{% block body %}
+    <h2>Are you want to delete {{todo.title}}?</h2>
+    <form action="{{ url_for('delete_todo', id=todo.id) }}" method="post" >
+        <div class="d-flex justify-content-left" >
+            <input class="btn btn-danger ms-1" type="submit" value="Confirm">
+            <a href="{{ url_for('index') }}" class="btn btn-primary ms-5" type="submit">Cansel</a>
+        </div>
+    </form>
+{% endblock %}

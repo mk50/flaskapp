@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block body %}
+    {% for todo in todos %}
+        <div class='todo-container'>
+            <article class="media content-section">
+                 <div class="media-body">
+                   <h2><a class="todo-title" href="{{ url_for('get_todo', id=todo.id) }}">{{ todo.title }}</a></h2>
+                   <p class="todo-content">{{ todo.description }}</p>
+                   <div class="todo-metadata d-flex justify-content-between">
+                       <small class="text-muted">Created At: {{ todo.created_at }}</small>
+                     </div>
+                 </div>
+               </article>
+        </div>
+    {% endfor %}
+
+{% endblock %}
